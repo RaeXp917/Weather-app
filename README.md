@@ -63,3 +63,5 @@ If you prefer not to build it yourself, you can download the non-licensed APK ve
 ⚠️ **Disclaimer:** This APK is provided "as is" for educational and testing purposes.  
 I am **not responsible** for any damage, data loss, or issues caused by using this application.  
 Install and use it **at your own risk**.
+
+Thanks for checking out my project! I'm super excited about this one 'cause it shows how much I've improved! If you’ve got any tips or feedback, feel free to drop a comment!
