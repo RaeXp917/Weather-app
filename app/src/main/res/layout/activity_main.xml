@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <!-- Lottie Background (If you add it back later) -->
+    <!-- <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/backgroundLottieView" ... /> -->
+
+    <EditText
+        android:id="@+id/cityInputEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter city name"
+        android:inputType="textCapWords"
+        android:background="#33FFFFFF"
+        android:padding="12dp"
+        android:textColor="@android:color/white"
+        android:textColorHint="#B3FFFFFF"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/searchWeatherButton"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/searchWeatherButton"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        app:layout_constraintTop_toTopOf="@id/cityInputEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/cityInputEditText"
+        android:layout_marginEnd="16dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/myLocationButton"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Use My Location"
+        app:icon="@android:drawable/ic_menu_mylocation"
+        app:layout_constraintStart_toStartOf="@id/cityInputEditText"
+        app:layout_constraintEnd_toEndOf="@id/searchWeatherButton"
+        app:layout_constraintTop_toBottomOf="@id/cityInputEditText"
+        android:layout_marginTop="8dp"/>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/myLocationButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="16dp"> 
+
+                <!-- Lottie Loading Indicator (for initial load, not swipe refresh) -->
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/loadingIndicator"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    app:lottie_rawRes="@raw/loading"
+                    app:lottie_loop="true"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toTopOf="parent" 
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="8dp"/>
+
+                <TextView
+                    android:id="@+id/errorTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/holo_red_light" 
+                    android:background="#4DFF0000" 
+                    android:padding="8dp"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/loadingIndicator" 
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginTop="8dp"
+                    tools:text="Error message here" />
+
+                <TextView
+                    android:id="@+id/cityTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="28sp" 
+                    android:textStyle="bold"
+                    android:textColor="@android:color/white"
+                    app:layout_constraintTop_toBottomOf="@+id/errorTextView" 
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="16dp"
+                    tools:text="City Name" />
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/currentWeatherLottieView" 
+                    android:layout_width="120dp" 
+                    android:layout_height="120dp" 
+                    app:lottie_autoPlay="false"
+                    app:lottie_loop="true"
+                    android:visibility="gone" 
+                    app:layout_constraintTop_toBottomOf="@+id/cityTextView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:id="@+id/temperatureTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="56sp" 
+                    android:textColor="@android:color/white"
+                    app:layout_constraintTop_toBottomOf="@+id/currentWeatherLottieView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="25°C" />
+
+                <TextView
+                    android:id="@+id/altitudeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:visibility="gone" 
+                    app:layout_constraintTop_toBottomOf="@id/temperatureTextView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="Altitude: 123m" />
+
+                <TextView
+                    android:id="@+id/conditionTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp" 
+                    app:layout_constraintTop_toBottomOf="@id/altitudeTextView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="Clear Sky" />
+
+                <TextView
+                    android:id="@+id/windTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="28sp" 
+                    android:textColor="#E6FFFFFF"
+                    app:layout_constraintTop_toBottomOf="@+id/conditionTextView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="10dp"
+                    tools:text="WIND: ↗" />
+
+                <LinearLayout
+                    android:id="@+id/sunTimesLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@+id/windTextView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android.layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/sunriseTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" 
+                        android:textColor="#E6FFFFFF"
+                        tools:text="Sunrise: 6:00 AM" />
+
+                    <TextView
+                        android:id="@+id/sunsetTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp" 
+                        android:textColor="#E6FFFFFF"
+                        android:layout_marginStart="20dp"
+                        tools:text="Sunset: 8:00 PM" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/lastUpdatedTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp" 
+                    android:textColor="#B3FFFFFF" 
+                    app:layout_constraintTop_toBottomOf="@+id/sunTimesLayout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="10dp"
+                    tools:text="Last updated: 10:00 AM" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/forecastRecyclerView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" 
+                    android:nestedScrollingEnabled="false" 
+                    app:layout_constraintTop_toBottomOf="@+id/lastUpdatedTextView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="16dp"
+                    tools:listitem="@layout/item_daily_forecast" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="day_background">#87CEEB</color> <!-- Sky Blue -->
+    <color name="night_background">#000080</color> <!-- Navy -->
+    <color name="text_color_day">#FF202020</color> <!-- Dark Gray for text on light background -->
+    <color name="text_color_night">#FFFFFFFF</color> <!-- White for text on dark background -->
+    <color name="text_color_secondary_day">#FF505050</color> <!-- Medium Gray for secondary text -->
+    <color name="text_color_secondary_night">#B3FFFFFF</color> <!-- Lighter White for secondary text -->
+
+    <!-- Button colors -->
+    <color name="button_stroke_day">#FF616161</color> <!-- Dark Grey for button border in day mode -->
+    <color name="button_text_day">#FF333333</color>   <!-- Dark Grey for button text in day mode -->
+    <color name="button_icon_day">#FF333333</color>   <!-- Dark Grey for button icon in day mode -->
+    <color name="button_stroke_night">#B3FFFFFF</color><!-- Semi-transparent white for button border in night mode -->
+    <color name="button_text_night">#FFFFFFFF</color>  <!-- White for button text in night mode -->
+    <color name="button_icon_night">#FFFFFFFF</color>  <!-- White for button icon in night mode -->
+</resources>

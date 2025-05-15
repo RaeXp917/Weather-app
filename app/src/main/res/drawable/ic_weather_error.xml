@@ -1,0 +1,17 @@
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#E0E0E0"/>
+            <size android:width="48dp" android:height="48dp"/>
+        </shape>
+    </item>
+    <item android:gravity="center">
+        <rotate android:fromDegrees="45" android:toDegrees="45">
+            <shape android:shape="line">
+                <stroke android:width="2dp" android:color="#757575"/>
+                <size android:width="24dp" />
+            </shape>
+        </rotate>
+    </item>
+</layer-list>
