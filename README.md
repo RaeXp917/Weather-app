@@ -1,4 +1,4 @@
-# MyWeatherApp
+# Weather App
 
 ## Overview
 
