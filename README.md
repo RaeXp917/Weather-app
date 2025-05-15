@@ -20,7 +20,7 @@ A modern and feature-rich Android weather application built with Kotlin. It deli
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 | Main Screen | Athens | California |
 |-------------|--------|------------|
