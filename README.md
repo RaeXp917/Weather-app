@@ -20,36 +20,21 @@
 
 ---
 
-## Preview
+## 📸 Screenshots
 
-### Screenshots
-
-<!-- Replace the image URLs below with your actual screenshots -->
-![Main Screen](path/to/screenshot1.png)  
-*Main weather display with current weather details*
-
-![5-Day Forecast](path/to/screenshot2.png)  
-*Expandable 5-day forecast showing hourly details*
+| Main Screen | Athens | California |
+|-------------|--------|------------|
+| ![Main](screenshots/main.JPG) | ![Athens](screenshots/athens.JPG) | ![California](screenshots/california.JPG) |
 
 ---
 
-### GIFs
-
-<!-- Replace the GIF URLs below with your actual GIFs -->
-![Weather Animation](path/to/animation1.gif)  
-*Lottie animation for rainy weather*
 
 ---
 
-## How to Install
-
-Download the latest APK from the [Releases](link-to-releases-page) section and install it on your Android device.
-
----
-
-## Technologies Used
+## 🛠️ Technologies Used
 
 - Kotlin
+- Jetpack Compose + Material Components
 - Android Architecture Components (ViewModel, LiveData)
 - Ktor (Networking)
 - kotlinx.serialization (JSON parsing)
@@ -59,3 +44,21 @@ Download the latest APK from the [Releases](link-to-releases-page) section and i
 - OpenWeatherMap API
 
 ---
+
+##  Ideas
+
+- Favorites list with saved cities  
+- Dark mode toggle  
+- Weather alerts (push notifications)  
+- Localization support (multi-language)
+
+
+---
+
+##  APK Release
+
+If you prefer not to build it yourself, you can download the non-licensed APK version from the [Releases](https://github.com/RaeXp917/Weather-app/releases/tag/test) section and install it directly on your Android device.
+
+⚠️ **Disclaimer:** This APK is provided "as is" for educational and testing purposes.  
+I am **not responsible** for any damage, data loss, or issues caused by using this application.  
+Install and use it **at your own risk**.
