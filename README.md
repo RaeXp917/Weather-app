@@ -51,6 +51,7 @@
 - Dark mode toggle  
 - Weather alerts (push notifications)  
 - Localization support (multi-language)
+- Home widget
 
 
 ---
