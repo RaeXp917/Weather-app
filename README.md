@@ -2,7 +2,7 @@
 
 ## Overview
 
-**MyWeatherApp** is a feature-rich Android weather application built with Kotlin. It provides accurate current weather and a 5-day forecast for any city you search or your current GPS location. It also shows altitude based on the device’s barometric sensor and uses engaging Lottie animations for weather conditions.
+A modern and feature-rich Android weather application built with Kotlin. It delivers real-time weather updates and a detailed 5-day forecast for any searched city or the user's current location. The app also includes altitude estimation using the device’s barometric pressure sensor and enhances the user experience with dynamic themes and smooth Lottie animations for weather conditions.
 
 ---
 
@@ -31,7 +31,7 @@
 
 ---
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 - Kotlin
 - Jetpack Compose + Material Components
